@@ -35,10 +35,6 @@ My doctoral research at the University of Sheffield focuses on making modern spe
 
 *Further publications in preparation.*
 
-## Supervision & teaching
-
-I have teaching and marking responsibilities for **COM4511/6511 Speech Processing** at the University of Sheffield, covering topics including MFCC feature extraction, keyword spotting, voice activity detection, Gaussian mixture models, and K-means clustering for speech analysis.
-
 ## Affiliations
 
 - [Department of Computer Science, University of Sheffield](https://www.sheffield.ac.uk/cs)

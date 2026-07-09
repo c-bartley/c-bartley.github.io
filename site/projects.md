@@ -22,22 +22,6 @@ The platform is hosted at the University of Sheffield and is free to use. Feedba
 
 ---
 
-## Grad-VC
-
-A diffusion-based voice conversion framework designed for low-resource and endangered language settings. Built on Grad-TTS and DiffVC, Grad-VC uses word-pair supervision for non-parallel training, eliminating the need for forced alignment — a critical advantage when working with languages that lack the phonetic inventories and pronunciation lexicons that alignment tools require.
-
-Key design decisions include a static speaker embedding approach chosen for low-resource constraints, and a joint diffusion-prior loss for training stability.
-
-*Research code — not yet publicly released.*
-
----
-
-## Manx Search Data
-
-<a href="https://github.com/c-bartley/manx-search-data">github.com/c-bartley/manx-search-data</a> — Structured bilingual texts for the Manx language (forked from [david-allison/manx-search-data](https://github.com/david-allison/manx-search-data)), supporting searchable access to Manx-English parallel texts.
-
----
-
 ## Other work
 
 **COM4511/6511 Speech Processing** — Teaching materials and marking support for the University of Sheffield's speech technology module, covering MFCC extraction, keyword spotting, VAD, GMMs, and K-means clustering.

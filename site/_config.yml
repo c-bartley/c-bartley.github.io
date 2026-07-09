@@ -12,13 +12,11 @@ baseurl: ""
 lang: en-GB
 
 # ============================================================
-# Author / Identity (used by jekyll-seo-tag)
+# Author / Identity (used by jekyll-seo-tag and the Hamilton theme)
 # ============================================================
-author:
-  name: Chris Bartley
-  email: csjbartley1@sheffield.ac.uk
-  uri: https://c-bartley.github.io
-  twitter: null                       # Add if you create one
+author: Chris Bartley
+email: csjbartley1@sheffield.ac.uk
+avatar: /assets/images/me.jpeg
 
 # Social links (used by jekyll-seo-tag for JSON-LD)
 social:
@@ -42,9 +40,15 @@ permalink: /blog/:year/:month/:title/
 excerpt_separator: <!--more-->
 
 # ============================================================
+# Theme — Hamilton (https://github.com/ngzhio/jekyll-theme-hamilton)
+# ============================================================
+remote_theme: ngzhio/jekyll-theme-hamilton
+
+# ============================================================
 # Plugins (all supported by GitHub Pages)
 # ============================================================
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -62,25 +66,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Chris Bartley"
+      author: ["Chris Bartley"]
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
-
-# ============================================================
-# Navigation
-# ============================================================
-navigation:
-  - title: Research
-    url: /research/
-  - title: Projects
-    url: /projects/
-  - title: Blog
-    url: /blog/
-  - title: CV
-    url: /cv/
 
 # ============================================================
 # Exclude from build
