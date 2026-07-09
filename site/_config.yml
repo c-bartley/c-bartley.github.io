@@ -92,3 +92,4 @@ exclude:
   - Gemfile.lock
   - SETUP_GUIDE.md
   - "*.sh"
+  - vendor/
