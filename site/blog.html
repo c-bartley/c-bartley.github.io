@@ -11,16 +11,17 @@ permalink: /blog/
   <h1>Blog</h1>
   <p class="page-subtitle">
     Notes on endangered language technology, speech processing, and building AI
-    tools for Manx Gaelic.
+    tools for Manx Gaelic. Posts here are cross-posted with the
+    <a href="https://gaelgai.im/#blog">Gaelg AI blog</a>.
   </p>
   <p style="font-size: 0.9rem; color: var(--color-text-muted);">
     <a href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a>
   </p>
 </header>
 
-<ul class="post-list">
+<ul class="post-list" id="post-list">
   {% for post in site.posts %}
-  <li>
+  <li data-date="{{ post.date | date_to_xmlschema }}">
     <span class="card-meta">{{ post.date | date: "%d %b %Y" }}</span>
     <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
     {% if post.tags.size > 0 %}
@@ -33,6 +34,99 @@ permalink: /blog/
   {% endfor %}
 </ul>
 
-{% if site.posts.size == 0 %}
-<p>No posts yet — check back soon.</p>
-{% endif %}
+<p id="no-posts-message"{% if site.posts.size > 0 %} style="display: none;"{% endif %}>
+  No posts yet — check back soon.
+</p>
+
+<script>
+  // Pulls in posts published directly on the Gaelg AI blog (gaelgai.im/blog.json)
+  // and merges them into the list above in date order, so this page shows every
+  // post regardless of which site it was originally written on.
+  (function () {
+    var GAELG_AI_FEED_URL = "https://gaelgai.im/blog.json";
+
+    function formatDate(iso) {
+      var d = new Date(iso);
+      if (isNaN(d)) return "";
+      return d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+    }
+
+    function buildItem(post) {
+      var li = document.createElement("li");
+      li.setAttribute("data-date", post.date_published || "");
+
+      var meta = document.createElement("span");
+      meta.className = "card-meta";
+      meta.textContent = formatDate(post.date_published) + " · Gaelg AI";
+      li.appendChild(meta);
+
+      var h3 = document.createElement("h3");
+      var a = document.createElement("a");
+      a.href = post.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = post.title || post.url;
+      h3.appendChild(a);
+      li.appendChild(h3);
+
+      if (post.tags && post.tags.length) {
+        var tagList = document.createElement("ul");
+        tagList.className = "post-tags";
+        tagList.style.marginBottom = "var(--space-sm)";
+        post.tags.forEach(function (tag) {
+          var tagLi = document.createElement("li");
+          tagLi.className = "tag";
+          tagLi.textContent = tag;
+          tagList.appendChild(tagLi);
+        });
+        li.appendChild(tagList);
+      }
+
+      var excerpt = document.createElement("p");
+      excerpt.className = "post-excerpt";
+      excerpt.textContent = post.summary || "";
+      li.appendChild(excerpt);
+
+      return li;
+    }
+
+    fetch(GAELG_AI_FEED_URL)
+      .then(function (res) {
+        if (!res.ok) throw new Error("Gaelg AI feed request failed: " + res.status);
+        return res.json();
+      })
+      .then(function (feed) {
+        var items = (feed && feed.items) || [];
+        if (!items.length) return;
+
+        var list = document.getElementById("post-list");
+        var existing = Array.prototype.slice.call(list.children);
+
+        items.forEach(function (post) {
+          var newLi = buildItem(post);
+          var newDate = new Date(post.date_published || 0);
+          var inserted = false;
+
+          for (var i = 0; i < existing.length; i++) {
+            var existingDate = new Date(existing[i].getAttribute("data-date") || 0);
+            if (newDate > existingDate) {
+              list.insertBefore(newLi, existing[i]);
+              existing.splice(i, 0, newLi);
+              inserted = true;
+              break;
+            }
+          }
+          if (!inserted) {
+            list.appendChild(newLi);
+            existing.push(newLi);
+          }
+        });
+
+        document.getElementById("no-posts-message").style.display = "none";
+      })
+      .catch(function (err) {
+        // Fails silently — the page still works with just the local posts.
+        console.warn("Could not load Gaelg AI posts:", err);
+      });
+  })();
+</script>
