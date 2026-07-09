@@ -1,0 +1,97 @@
+---
+layout: default
+title: Chris Bartley — Endangered Language Technology Researcher
+description: >-
+  PhD researcher at the University of Sheffield building speech and language
+  technology for endangered languages. Creator of Gaelg AI, a suite of AI tools
+  for Manx Gaelic.
+---
+
+<section class="hero">
+  <h1>Chris Bartley</h1>
+  <p class="subtitle">
+    PhD researcher at the University of Sheffield, building speech and language
+    technology to help preserve endangered languages — starting with
+    <a href="https://gaelgai.im">Manx Gaelic</a>.
+  </p>
+  <ul class="hero-links">
+    <li><a href="https://github.com/c-bartley">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/chris-bartley-895b811ab/">LinkedIn</a></li>
+    <li><a href="https://orcid.org/0009-0007-2882-6268">ORCID</a></li>
+    <li><a href="https://gaelgai.im">Gaelg AI</a></li>
+    <li><a href="mailto:csjbartley1@sheffield.ac.uk">Email</a></li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>What I work on</h2>
+  <p>
+    My research sits at the intersection of speech technology and language
+    endangerment. I develop methods that let small, under-resourced languages
+    access the same AI capabilities that major languages take for granted —
+    text-to-speech, automatic speech recognition, machine translation, and
+    voice conversion — and I do this with a fraction of the training data that
+    standard approaches require.
+  </p>
+  <p>
+    My primary language of focus is <strong>Manx Gaelic (Gaelg)</strong>, a
+    Celtic language from the Isle of Man that was declared extinct in 2009 but
+    has since been the subject of one of the most remarkable language
+    revitalisation efforts in the world.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Key areas</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Low-resource speech technology</h3>
+      <p>
+        Building ASR, TTS, and voice conversion systems that work with limited
+        data. My Interspeech 2026 paper demonstrates bootstrapping speech
+        recognition from short-form corpora for endangered languages.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Diffusion-based voice conversion</h3>
+      <p>
+        Developing Grad-VC, a diffusion-based voice conversion framework built
+        on Grad-TTS/DiffVC, designed for non-parallel training with word-pair
+        supervision — removing the need for forced alignment in low-resource
+        settings.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Gaelg AI platform</h3>
+      <p>
+        Created and maintain <a href="https://gaelgai.im">gaelgai.im</a>, a
+        public web platform providing AI-powered tools for Manx Gaelic: speech
+        synthesis, recognition, translation, and audio timestamping.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Celtic & multilingual NLP</h3>
+      <p>
+        Working across the Celtic language family and other endangered
+        languages to develop transferable, multilingual approaches to speech
+        and language processing.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Recent posts</h2>
+  <ul class="post-list">
+    {% for post in site.posts limit:3 %}
+    <li>
+      <span class="card-meta">{{ post.date | date: "%d %b %Y" }}</span>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if site.posts.size > 3 %}
+  <p><a href="{{ '/blog/' | relative_url }}">All posts &rarr;</a></p>
+  {% endif %}
+</section>

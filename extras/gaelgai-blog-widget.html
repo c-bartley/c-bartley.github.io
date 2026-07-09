@@ -1,0 +1,157 @@
+<!--
+  GAELG AI — BLOG WIDGET
+  ===========================================================
+  Drop this into gaelgai.im as a new /blog route or section.
+  It fetches the Atom feed from the personal site, filters
+  for posts tagged with the "crosspost" category, and renders
+  them. No build step needed — pure client-side.
+
+  SETUP:
+  1. Add a /blog route in your app (or a blog.html page).
+  2. Include this HTML in that page.
+  3. Adjust FEED_URL below if the site URL changes.
+  ===========================================================
+-->
+
+<section id="gaelgai-blog" class="blog-section">
+  <h2>Blog</h2>
+  <p class="blog-intro">
+    Research notes and updates on building AI tools for the Manx language.
+    Posts appear here automatically from
+    <a href="https://c-bartley.github.io/blog/">the main blog</a>.
+  </p>
+  <div id="blog-posts" class="blog-posts">
+    <p class="blog-loading">Loading posts…</p>
+  </div>
+</section>
+
+<style>
+  .blog-section {
+    max-width: 48rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  .blog-intro {
+    color: #6b7280;
+    margin-bottom: 2rem;
+  }
+  .blog-post {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .blog-post:last-child { border-bottom: none; }
+  .blog-post-date {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    font-family: system-ui, sans-serif;
+  }
+  .blog-post-title {
+    font-size: 1.3rem;
+    margin: 0.25rem 0 0.5rem;
+  }
+  .blog-post-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .blog-post-title a:hover { color: #155e75; }
+  .blog-post-summary {
+    color: #4b5563;
+    line-height: 1.6;
+  }
+  .blog-post-readmore {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #155e75;
+  }
+  .blog-loading, .blog-error {
+    color: #9ca3af;
+    font-style: italic;
+  }
+</style>
+
+<script>
+(function () {
+  // ---- Configuration ----
+  const FEED_URL = 'https://c-bartley.github.io/feed.xml';
+  const CONTAINER = document.getElementById('blog-posts');
+  const MAX_POSTS = 10;
+
+  // Use a CORS proxy if needed. GitHub Pages serves Atom feeds with
+  // appropriate headers, so this should work directly. If CORS blocks
+  // the request (e.g. during local dev), uncomment the proxy line.
+  // const PROXY = 'https://api.allorigins.win/raw?url=';
+  const PROXY = '';
+
+  async function loadPosts() {
+    try {
+      const res = await fetch(PROXY + FEED_URL);
+      if (!res.ok) throw new Error(`Feed returned ${res.status}`);
+      const text = await res.text();
+      const xml = new DOMParser().parseFromString(text, 'application/xml');
+
+      // Jekyll-feed produces Atom. Entries are <entry> elements.
+      const entries = xml.querySelectorAll('entry');
+      const posts = [];
+
+      entries.forEach(entry => {
+        // Filter: only show posts that have a <category term="crosspost">
+        // or contain the crosspost tag. Jekyll-feed puts tags as categories.
+        const categories = entry.querySelectorAll('category');
+        const tags = Array.from(categories).map(c => c.getAttribute('term'));
+
+        // Show all posts, or filter to crosspost-tagged ones only:
+        // if (!tags.some(t => t === 'crosspost')) return;
+
+        const title = entry.querySelector('title')?.textContent || 'Untitled';
+        const link = entry.querySelector('link')?.getAttribute('href') || '#';
+        const published = entry.querySelector('published')?.textContent;
+        const summary = entry.querySelector('summary')?.textContent
+                      || entry.querySelector('content')?.textContent || '';
+
+        posts.push({ title, link, published, summary, tags });
+      });
+
+      render(posts.slice(0, MAX_POSTS));
+    } catch (err) {
+      console.error('Blog widget error:', err);
+      CONTAINER.innerHTML =
+        '<p class="blog-error">Could not load posts. ' +
+        '<a href="https://c-bartley.github.io/blog/">Visit the blog directly</a>.</p>';
+    }
+  }
+
+  function render(posts) {
+    if (posts.length === 0) {
+      CONTAINER.innerHTML = '<p>No posts yet — check back soon.</p>';
+      return;
+    }
+
+    CONTAINER.innerHTML = posts.map(p => {
+      const date = p.published
+        ? new Date(p.published).toLocaleDateString('en-GB', {
+            day: 'numeric', month: 'short', year: 'numeric'
+          })
+        : '';
+
+      // Strip HTML from summary and truncate
+      const plain = p.summary.replace(/<[^>]*>/g, '');
+      const excerpt = plain.length > 300
+        ? plain.substring(0, 300).replace(/\s+\S*$/, '') + '…'
+        : plain;
+
+      return `
+        <article class="blog-post">
+          <span class="blog-post-date">${date}</span>
+          <h3 class="blog-post-title"><a href="${p.link}">${p.title}</a></h3>
+          <p class="blog-post-summary">${excerpt}</p>
+          <a href="${p.link}" class="blog-post-readmore">Read more →</a>
+        </article>
+      `;
+    }).join('');
+  }
+
+  loadPosts();
+})();
+</script>

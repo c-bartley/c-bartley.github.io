@@ -1,0 +1,94 @@
+# ============================================================
+# Site Settings
+# ============================================================
+title: Chris Bartley
+tagline: Endangered Language Technology Researcher
+description: >-
+  PhD researcher at the University of Sheffield specialising in speech technology
+  for endangered languages, with a focus on Manx Gaelic (Gaelg). Building AI tools
+  to help preserve and revitalise minority languages in the digital age.
+url: "https://c-bartley.github.io"   # Change to custom domain when ready
+baseurl: ""
+lang: en-GB
+
+# ============================================================
+# Author / Identity (used by jekyll-seo-tag)
+# ============================================================
+author:
+  name: Chris Bartley
+  email: csjbartley1@sheffield.ac.uk
+  uri: https://c-bartley.github.io
+  twitter: null                       # Add if you create one
+
+# Social links (used by jekyll-seo-tag for JSON-LD)
+social:
+  name: Chris Bartley
+  links:
+    - https://github.com/c-bartley
+    - https://www.linkedin.com/in/chris-bartley-895b811ab/
+    - https://orcid.org/0009-0007-2882-6268
+    - https://gaelgai.im
+
+# ============================================================
+# Build Settings
+# ============================================================
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+permalink: /blog/:year/:month/:title/
+excerpt_separator: <!--more-->
+
+# ============================================================
+# Plugins (all supported by GitHub Pages)
+# ============================================================
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Feed settings
+feed:
+  posts_limit: 20
+
+# ============================================================
+# Collections & Defaults
+# ============================================================
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Chris Bartley"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# ============================================================
+# Navigation
+# ============================================================
+navigation:
+  - title: Research
+    url: /research/
+  - title: Projects
+    url: /projects/
+  - title: Blog
+    url: /blog/
+  - title: CV
+    url: /cv/
+
+# ============================================================
+# Exclude from build
+# ============================================================
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - SETUP_GUIDE.md
+  - "*.sh"
