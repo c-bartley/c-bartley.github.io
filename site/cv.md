@@ -87,4 +87,4 @@ See the [Research page](/research/) for a full list.
 
 ## Contact
 
-<a href="mailto:csjbartley1@sheffield.ac.uk">csjbartley1@sheffield.ac.uk</a> · <a href="https://github.com/c-bartley">GitHub</a> · <a href="https://www.linkedin.com/in/chris-bartley-895b811ab/">LinkedIn</a> · <a href="https://orcid.org/0009-0007-2882-6268">ORCID</a>
+<a href="mailto:csjbartley1@sheffield.ac.uk">csjbartley1@sheffield.ac.uk</a> · <a href="https://github.com/chris-sj-bartley">GitHub</a> · <a href="https://www.linkedin.com/in/chris-bartley-895b811ab/">LinkedIn</a> · <a href="https://orcid.org/0009-0007-2882-6268">ORCID</a>

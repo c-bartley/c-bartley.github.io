@@ -19,8 +19,8 @@
 
 | | |
 |---|---|
-| 🌐 Website | [c-bartley.github.io](https://c-bartley.github.io) |
+| 🌐 Website | [chris-sj-bartley.github.io](https://chris-sj-bartley.github.io) |
 | 🗣 Gaelg AI | [gaelgai.im](https://gaelgai.im) |
-| 📝 Blog | [c-bartley.github.io/blog](https://c-bartley.github.io/blog/) |
+| 📝 Blog | [chris-sj-bartley.github.io/blog](https://chris-sj-bartley.github.io/blog/) |
 | 💼 LinkedIn | [chris-bartley-895b811ab](https://www.linkedin.com/in/chris-bartley-895b811ab/) |
 | 🔬 ORCID | [0009-0007-2882-6268](https://orcid.org/0009-0007-2882-6268) |

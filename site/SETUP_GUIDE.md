@@ -4,7 +4,7 @@
 
 ```
 ┌─────────────────────────────────────────────┐
-│  GitHub repo: c-bartley.github.io           │
+│  GitHub repo: chris-sj-bartley.github.io           │
 │  ├── Jekyll site (auto-built by GH Pages)   │
 │  ├── Blog posts in _posts/ (markdown)       │
 │  └── Generates feed.xml (Atom/RSS)          │
@@ -14,7 +14,7 @@
     │                     │
     ▼                     ▼
   Served at            gaelgai.im/blog
-  c-bartley.           fetches feed.xml
+  chris-sj-bartley.           fetches feed.xml
   github.io            and renders posts
                        tagged crosspost
 ```
@@ -32,8 +32,8 @@ gaelgai.im blog page fetches the RSS feed client-side.
 ```bash
 # On your local machine
 cd ~/projects  # or wherever
-git init c-bartley.github.io
-cd c-bartley.github.io
+git init chris-sj-bartley.github.io
+cd chris-sj-bartley.github.io
 ```
 
 Copy the entire contents of the `site/` folder into this directory (all the
@@ -44,18 +44,18 @@ files from the download: `_config.yml`, `_layouts/`, `_posts/`, `assets/`,
 ```bash
 git add -A
 git commit -m "Initial site"
-git remote add origin git@github.com:c-bartley/c-bartley.github.io.git
+git remote add origin git@github.com:chris-sj-bartley/chris-sj-bartley.github.io.git
 git push -u origin main
 ```
 
 ### 2. Enable GitHub Pages
 
-1. Go to **github.com/c-bartley/c-bartley.github.io → Settings → Pages**
+1. Go to **github.com/chris-sj-bartley/chris-sj-bartley.github.io → Settings → Pages**
 2. Under "Build and deployment", set Source to **Deploy from a branch**
 3. Set Branch to **main**, folder to **/ (root)**
 4. Click Save
 
-The site will be live at **https://c-bartley.github.io** within a few
+The site will be live at **https://chris-sj-bartley.github.io** within a few
 minutes. GitHub will automatically run Jekyll on every push.
 
 ### 3. (Optional) Custom domain
@@ -72,7 +72,7 @@ branding and SEO authority over time. Steps:
      185.199.110.153
      185.199.111.153
      ```
-   - **CNAME** for `www` → `c-bartley.github.io`
+   - **CNAME** for `www` → `chris-sj-bartley.github.io`
 3. In the repo, create a `CNAME` file containing just the domain:
    ```
    chrisbartley.com
@@ -85,16 +85,16 @@ branding and SEO authority over time. Steps:
 
 ## Part 2 — Set up the GitHub Profile README
 
-The `c-bartley/c-bartley` repo is special — its README shows on your GitHub
+The `chris-sj-bartley/chris-sj-bartley` repo is special — its README shows on your GitHub
 profile page.
 
-1. Create the repo at **github.com/new** → name it `c-bartley`, tick
+1. Create the repo at **github.com/new** → name it `chris-sj-bartley`, tick
    "Add a README file"
 2. Replace the auto-generated README.md with the contents of
    `GITHUB_PROFILE_README.md` from the download
 3. Commit and push
 
-Your GitHub profile at `github.com/c-bartley` will immediately show the
+Your GitHub profile at `github.com/chris-sj-bartley` will immediately show the
 README with your research summary, links, and project descriptions.
 
 ---
@@ -181,7 +181,7 @@ from datetime import datetime
 @lru_cache(maxsize=1)
 def _fetch_feed(cache_key):
     """cache_key changes hourly to refresh."""
-    return feedparser.parse('https://c-bartley.github.io/feed.xml')
+    return feedparser.parse('https://chris-sj-bartley.github.io/feed.xml')
 
 @app.route('/blog')
 def blog():
@@ -255,11 +255,11 @@ in place and what to do next:
 
 | What | Where |
 |---|---|
-| Personal site | `c-bartley.github.io` (or custom domain) |
-| Blog | `c-bartley.github.io/blog/` |
-| RSS feed | `c-bartley.github.io/feed.xml` |
-| Sitemap | `c-bartley.github.io/sitemap.xml` |
-| GitHub profile | `github.com/c-bartley` |
+| Personal site | `chris-sj-bartley.github.io` (or custom domain) |
+| Blog | `chris-sj-bartley.github.io/blog/` |
+| RSS feed | `chris-sj-bartley.github.io/feed.xml` |
+| Sitemap | `chris-sj-bartley.github.io/sitemap.xml` |
+| GitHub profile | `github.com/chris-sj-bartley` |
 | Gaelg AI | `gaelgai.im` |
 | Gaelg AI blog | `gaelgai.im/blog` (after widget install) |
 

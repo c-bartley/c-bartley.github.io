@@ -7,7 +7,7 @@ description: >-
   PhD researcher at the University of Sheffield specialising in speech technology
   for endangered languages, with a focus on Manx Gaelic (Gaelg). Building AI tools
   to help preserve and revitalise minority languages in the digital age.
-url: "https://c-bartley.github.io"   # Change to custom domain when ready
+url: "https://chris-sj-bartley.github.io"   # Change to custom domain when ready
 baseurl: ""
 lang: en-GB
 
@@ -22,7 +22,7 @@ avatar: /assets/images/me.jpeg
 social:
   name: Chris Bartley
   links:
-    - https://github.com/c-bartley
+    - https://github.com/chris-sj-bartley
     - https://www.linkedin.com/in/chris-bartley-895b811ab/
     - https://orcid.org/0009-0007-2882-6268
     - https://gaelgai.im
