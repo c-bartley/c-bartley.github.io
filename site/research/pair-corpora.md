@@ -11,47 +11,45 @@ permalink: /research/pair-corpora/
 <style>
   .samples { margin: 1.4rem 0; }
   .sample-box {
-    border: 1px solid #ddd;
+    border: 1px solid rgba(128, 128, 128, 0.35);
     border-radius: 10px;
     padding: 0.2rem 1rem 1rem;
     margin: 1.2rem 0;
   }
   .sample-box > h3 { margin: 0.9rem 0 0.3rem; }
-  .sample-box > p.box-sub { margin: 0 0 0.4rem; color: #777; font-size: 0.9em; }
+  .sample-box > p.box-sub { margin: 0 0 0.4rem; opacity: 0.7; font-size: 0.9em; }
   .table-wrap { overflow-x: auto; }
   table.sample-table { border-collapse: collapse; width: 100%; }
   .sample-table th, .sample-table td {
     padding: 0.5rem 0.6rem;
     text-align: left;
     vertical-align: middle;
-    border-top: 1px solid #eee;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
   }
   .sample-table thead th {
     border-top: none;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.35);
     font-size: 0.8em;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    color: #666;
+    opacity: 0.75;
   }
   .sample-table td.len {
     font-size: 1.35em;
     font-weight: 600;
     text-align: center;
-    color: #333;
     width: 2.5rem;
-    border-top: 2px solid #ddd;
+    border-top: 2px solid rgba(128, 128, 128, 0.4);
   }
   .sample-table td.tr { min-width: 9rem; }
   .sample-table .ph {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 0.85em;
     letter-spacing: 0.02em;
-    color: #333;
   }
-  .sample-table .wp { color: #666; display: block; margin-top: 0.15rem; }
+  .sample-table .wp { opacity: 0.7; display: block; margin-top: 0.15rem; }
   .sample-table audio { height: 34px; width: 230px; max-width: 100%; display: block; }
-  .sample-table .cap { font-size: 0.78em; color: #999; margin-top: 0.2rem; }
+  .sample-table .cap { font-size: 0.78em; opacity: 0.6; margin-top: 0.2rem; }
 </style>
 
 Each **pair** is the *same content spoken by two different speakers*, cut from

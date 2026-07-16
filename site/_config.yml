@@ -43,6 +43,7 @@ excerpt_separator: <!--more-->
 # Theme — Hamilton (https://github.com/ngzhio/jekyll-theme-hamilton)
 # ============================================================
 remote_theme: ngzhio/jekyll-theme-hamilton
+skin: sunset
 
 # ============================================================
 # Plugins (all supported by GitHub Pages)
