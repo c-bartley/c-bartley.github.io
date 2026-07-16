@@ -14,16 +14,11 @@ description: >-
     technology to help preserve endangered languages — starting with
     <a href="https://gaelgai.im">Manx Gaelic</a>.
   </p>
-  <ul class="hero-links">
-    <li><a href="https://github.com/chris-sj-bartley">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/chris-bartley-895b811ab/">LinkedIn</a></li>
-    <li><a href="https://orcid.org/0009-0007-2882-6268">ORCID</a></li>
-    <li><a href="https://gaelgai.im">Gaelg AI</a></li>
-    <li><a href="mailto:csjbartley1@sheffield.ac.uk">Email</a></li>
-  </ul>
 </section>
 
 <section class="section">
+  <h2>Research interests</h2>
+
   <p>
     My doctoral research at the University of Sheffield focuses on making modern
     speech and language technology accessible to endangered and low-resource
@@ -32,32 +27,33 @@ description: >-
     to be language-agnostic and transferable.
   </p>
 
-  <h2>Research interests</h2>
-
   <p>
-    <strong>Low-resource automatic speech recognition</strong> — Building ASR
-    systems that can bootstrap from very small corpora (tens of minutes to a few
-    hours of audio), using techniques like semi-supervised learning, data
+    <strong>Low-resource speech technology</strong> — Building ASR, TTS, and
+    voice conversion systems that bootstrap from very small corpora — tens of
+    minutes to a few hours of audio — using semi-supervised learning, data
     augmentation, and cross-lingual transfer from related languages.
   </p>
   <p>
-    <strong>Diffusion-based voice conversion</strong> — Developing Grad-VC, a
-    voice conversion framework built on Grad-TTS and DiffVC. The system uses
-    word-pair supervision for non-parallel training, removing the dependency on
-    forced alignment that makes standard approaches impractical for low-resource
-    languages.
+    <strong>Endangered language technology</strong> — Bringing these methods to
+    endangered and minority languages, primarily Manx Gaelic, and building
+    practical tools for revitalisation such as speech synthesis, recognition,
+    and translation. The approaches are language-agnostic and transfer across
+    the Celtic family and beyond.
+  </p>
+  <p>
+    <strong>Domain adaptation</strong> — Closing the gap between the clean, read
+    speech that models are trained on and the spontaneous speech that dominates
+    real recordings. I use voice conversion (Grad-VC / DiffVC) as offline data
+    augmentation, training on cross-speaker, content-matched word and phone
+    pairs rather than same-voice reconstruction.
     <a href="{{ '/research/pair-corpora/' | relative_url }}">Listen to sample training pairs</a>.
   </p>
   <p>
-    <strong>Endangered language speech synthesis</strong> — Training
-    multi-speaker TTS systems for Manx Gaelic with limited speaker data,
-    focusing on naturalness and speaker similarity in a setting where more data
-    cannot simply be collected.
-  </p>
-  <p>
-    <strong>Multilingual and Celtic language modelling</strong> — Cross-lingual
-    transfer learning across Celtic languages (Irish, Welsh, Scottish Gaelic,
-    Manx, Cornish, Breton) and other endangered language families.
+    <strong>Unsupervised learning</strong> — Speech models that learn from audio
+    without transcriptions, with a focus on graphemic approaches — including a
+    graphemic formulation of wav2vec-U 2.0 that maps speech directly to
+    characters rather than phonemes, removing the dependence on a phonemic
+    lexicon.
   </p>
 
   <h2>Publications</h2>
