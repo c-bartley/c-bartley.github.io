@@ -83,7 +83,7 @@ permalink: /cv/
 
 ## Publications
 
-See the [Research page](/research/) for a full list.
+See the [home page](/) for a full list.
 
 ## Contact
 
