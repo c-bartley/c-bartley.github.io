@@ -22,6 +22,23 @@ The platform is hosted at the University of Sheffield and is free to use. Feedba
 
 ---
 
+## Domain-Robust Voice Conversion for Low-Resource ASR
+
+*PhD project, 2025– · in preparation*
+
+Speech recognisers trained on clean, read speech degrade sharply on **spontaneous** speech — filled pauses, reduced articulation, variable speaking rate — which is exactly what dominates low-resource and endangered-language recordings. This project asks whether **voice conversion (VC) can serve as an offline data-augmentation method** to close that read↔spontaneous gap, and builds toward a diffusion model purpose-designed for it.
+
+The work runs in phases, each answering one question:
+
+- **Phase 0 — VC as augmentation.** Benchmark four modern VC methods (kNN-VC, VEVO, Seed-VC, DiffVC) as augmentation for ASR: convert read LibriSpeech toward a spectrum of spontaneous domains, fine-tune five acoustic models, and measure WER across a read→spontaneous test continuum.
+- **Phase 1 — Motivating diffusion.** Move from utterance-level to **word-level** evaluation to expose where conversion actually helps or hurts.
+- **Phase 2 — A diffusion model trained on word pairs.** A minimal-change adaptation of DiffVC that — unlike the original same-voice reconstruction objective — is trained on **cross-speaker, content-matched word and phone pairs** mined from force-aligned LibriTTS. → [**Listen to sample training pairs**](/research/pair-corpora/)
+- **Phase 3 — Endangered languages.** Apply the method to real endangered-language ASR (Manx, Cornish), where read↔spontaneous, speaker and accent mismatch compound.
+
+It complements the corpus-building line of work (Interspeech 2026): that paper addresses the *data-format* problem, this one the *domain-mismatch* problem — the two are additive.
+
+---
+
 ## Other work
 
 **COM4511/6511 Speech Processing** — Teaching materials and marking support for the University of Sheffield's speech technology module, covering MFCC extraction, keyword spotting, VAD, GMMs, and K-means clustering.
