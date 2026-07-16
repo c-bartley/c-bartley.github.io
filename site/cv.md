@@ -2,7 +2,7 @@
 layout: page
 title: CV
 description: >-
-  Curriculum vitae for Chris Bartley — PhD researcher in endangered language
+  Curriculum vitae for Chris Bartley, PhD researcher in endangered language
   speech technology at the University of Sheffield.
 permalink: /cv/
 ---
@@ -54,9 +54,9 @@ analysis.
       Built the first utterance-level speech corpus for Manx Gaelic with a
       Kaldi forced-alignment pipeline over 300+ hours of collected recordings,
       and used it to train the world's first ASR system for the language.
-      Reproduced the approach for Cornish, Hawaiian, Jeju, and Mohawk — showing
+      Reproduced the approach for Cornish, Hawaiian, Jeju, and Mohawk, showing
       competitive recognition at a fraction of the compute of large multilingual
-      models — and released the corpora and tooling as open resources. Accepted
+      models, and released the corpora and tooling as open resources. Accepted
       to Interspeech 2026; current work targets read↔spontaneous domain
       mismatch and unsupervised ASR.
     </p>
@@ -99,7 +99,7 @@ analysis.
 
 <div class="cv-section">
   <div class="cv-entry">
-    <h3>Financial Crime Analyst — The Co-operative Bank</h3>
+    <h3>Anti-Money Laundering (AML) Investigator — The Co-operative Bank</h3>
     <p class="cv-dates">2022–2024 · Manchester</p>
     <p>
       Analysed transaction data to identify suspicious activity and raise SARs,

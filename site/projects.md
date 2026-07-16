@@ -9,7 +9,7 @@ permalink: /projects/
 
 ## Gaelg AI
 
-<a href="https://gaelgai.im">gaelgai.im</a> — A public web platform providing AI-powered tools for the Manx Gaelic language. Built as part of my doctoral research and maintained as an open resource for the Manx-speaking community.
+<a href="https://gaelgai.im">gaelgai.im</a> is a public web platform providing AI-powered tools for the Manx Gaelic language. Built as part of my doctoral research and maintained as an open resource for the Manx-speaking community.
 
 The platform currently offers four tools, each trained on Manx language resources:
 
@@ -26,16 +26,16 @@ The platform is hosted at the University of Sheffield and is free to use. Feedba
 
 *PhD project, 2025– · in preparation*
 
-Speech recognisers trained on clean, read speech degrade sharply on **spontaneous** speech — filled pauses, reduced articulation, variable speaking rate — which is exactly what dominates low-resource and endangered-language recordings. This project asks whether **voice conversion (VC) can serve as an offline data-augmentation method** to close that read↔spontaneous gap, and builds toward a diffusion model purpose-designed for it.
+Speech recognisers trained on clean, read speech degrade sharply on **spontaneous** speech (filled pauses, reduced articulation, variable speaking rate), which is exactly what dominates low-resource and endangered-language recordings. This project asks whether **voice conversion (VC) can serve as an offline data-augmentation method** to close that read↔spontaneous gap, and builds toward a diffusion model purpose-designed for it.
 
 The work runs in phases, each answering one question:
 
 - **Phase 0 — VC as augmentation.** Benchmark four modern VC methods (kNN-VC, VEVO, Seed-VC, DiffVC) as augmentation for ASR: convert read LibriSpeech toward a spectrum of spontaneous domains, fine-tune five acoustic models, and measure WER across a read→spontaneous test continuum.
 - **Phase 1 — Motivating diffusion.** Move from utterance-level to **word-level** evaluation to expose where conversion actually helps or hurts.
-- **Phase 2 — A diffusion model trained on word pairs.** A minimal-change adaptation of DiffVC that — unlike the original same-voice reconstruction objective — is trained on **cross-speaker, content-matched word and phone pairs** mined from force-aligned LibriTTS. → [**Listen to sample training pairs**](/research/pair-corpora/)
+- **Phase 2 — A diffusion model trained on word pairs.** A minimal-change adaptation of DiffVC that, unlike the original same-voice reconstruction objective, is trained on **cross-speaker, content-matched word and phone pairs** mined from force-aligned LibriTTS. → [**Listen to sample training pairs**](/research/pair-corpora/)
 - **Phase 3 — Endangered languages.** Apply the method to real endangered-language ASR (Manx, Cornish), where read↔spontaneous, speaker and accent mismatch compound.
 
-It complements the corpus-building line of work (Interspeech 2026): that paper addresses the *data-format* problem, this one the *domain-mismatch* problem — the two are additive.
+It complements the corpus-building line of work (Interspeech 2026): that paper addresses the *data-format* problem, this one the *domain-mismatch* problem, and the two are additive.
 
 ---
 

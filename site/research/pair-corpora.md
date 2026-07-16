@@ -3,7 +3,7 @@ layout: page
 title: Cross-speaker pair corpora
 description: >-
   Audio samples of cross-speaker, content-matched word and phone pairs mined
-  from force-aligned LibriTTS — training supervision for diffusion voice
+  from force-aligned LibriTTS, training supervision for diffusion voice
   conversion (DiffVC / Grad-VC).
 permalink: /research/pair-corpora/
 ---
@@ -55,7 +55,7 @@ permalink: /research/pair-corpora/
 Each **pair** is the *same content spoken by two different speakers*, cut from
 LibriTTS clean (`train-clean-100` + `train-clean-360`) using Montreal Forced
 Aligner alignments. The **words** table matches on whole words; the **phones**
-table matches on ARPABET phone sequences, which can begin or end mid-word — a
+table matches on ARPABET phone sequences, which can begin or end mid-word; a
 leading or trailing hyphen marks the cut. The left column is the length of the
 matched unit.
 
@@ -169,6 +169,6 @@ matched unit.
 <p class="pub-venue" markdown="1">
 The 10 LibriTTS speakers reserved for DiffVC's test set are excluded throughout.
 Samples cut from LibriTTS (CC BY 4.0). Part of ongoing doctoral work on
-domain-robust voice conversion — see the
+domain-robust voice conversion. See the
 [project overview]({{ '/projects/' | relative_url }}).
 </p>
