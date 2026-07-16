@@ -7,6 +7,9 @@
 - title: ORCID
   url: https://orcid.org/0009-0007-2882-6268
   icon: icon-orcid
+- title: Google Scholar
+  url: https://scholar.google.com/citations?user=3s8SwWkAAAAJ&hl=en
+  icon: icon-scholar
 - title: Gaelg AI
   url: https://gaelgai.im
   icon: fas fa-language

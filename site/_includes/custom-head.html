@@ -1,21 +1,32 @@
 <!--
-  Font Awesome 5.0.12 (loaded by the Hamilton theme) predates the fa-orcid
-  brand glyph, so the ORCID social icon renders blank. We give ORCID its own
-  non-FA class (icon-orcid) and draw the official ORCID iD shape as a CSS mask.
-  Using a mask filled with currentColor means the icon inherits the theme's
-  icon colour (like the other social icons), and sizing it in `em` lets the
-  theme's `fa-2x` scale it to match its siblings exactly.
+  Font Awesome 5.0.12 (loaded by the Hamilton theme) predates the fa-orcid and
+  fa-google-scholar brand glyphs, so those social icons render blank. We give
+  each its own non-FA class and draw the official brand shape as a CSS mask.
+  A mask filled with currentColor means the icon inherits the theme's icon
+  colour (like the other social icons), and sizing it in `em` lets the theme's
+  `fa-2x` scale it to match its siblings exactly.
 -->
 <style>
-  .social-icon .icon-orcid {
+  .social-icon .icon-orcid,
+  .social-icon .icon-scholar {
     display: inline-block;
     width: 1em;
     height: 1em;
     vertical-align: -0.125em;   /* matches Font Awesome's baseline */
     background-color: currentColor;
-    -webkit-mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMjk0Ljc1IDE4OC4xOWgtNDUuOTJWMzQyaDQ3LjQ3YzY3LjYyIDAgODMuMTItNTEuMzQgODMuMTItNzYuOTEgMC00MS42NC0yNi41NC03Ni45LTg0LjY3LTc2Ljl6TTI1NiA4QzExOSA4IDggMTE5IDggMjU2czExMSAyNDggMjQ4IDI0OCAyNDgtMTExIDI0OC0yNDhTMzkzIDggMjU2IDh6TTE0NS42NiAzNTkuMTNoLTI5Ljc5VjE3OS42aDI5Ljc5djE3OS41M3ptLTE0LjktMjA3Ljk0YTE5LjU3IDE5LjU3IDAgMSAxIDE5LjU3LTE5LjU3IDE5LjY0IDE5LjY0IDAgMCAxLTE5LjU3IDE5LjU3ek0zMjkgMzU5LjEzaC04MS42MlYxNzkuNmg4MC43OWM3Ni45IDAgMTEwLjc1IDU1IDExMC43NSA4OS43Ni0uMDEgMzcuODctMjkuNjEgODkuNzctMTA5LjkyIDg5Ljc3eiIvPjwvc3ZnPg==") no-repeat center;
-            mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMjk0Ljc1IDE4OC4xOWgtNDUuOTJWMzQyaDQ3LjQ3YzY3LjYyIDAgODMuMTItNTEuMzQgODMuMTItNzYuOTEgMC00MS42NC0yNi41NC03Ni45LTg0LjY3LTc2Ljl6TTI1NiA4QzExOSA4IDggMTE5IDggMjU2czExMSAyNDggMjQ4IDI0OCAyNDgtMTExIDI0OC0yNDhTMzkzIDggMjU2IDh6TTE0NS42NiAzNTkuMTNoLTI5Ljc5VjE3OS42aDI5Ljc5djE3OS41M3ptLTE0LjktMjA3Ljk0YTE5LjU3IDE5LjU3IDAgMSAxIDE5LjU3LTE5LjU3IDE5LjY0IDE5LjY0IDAgMCAxLTE5LjU3IDE5LjU3ek0zMjkgMzU5LjEzaC04MS42MlYxNzkuNmg4MC43OWM3Ni45IDAgMTEwLjc1IDU1IDExMC43NSA4OS43Ni0uMDEgMzcuODctMjkuNjEgODkuNzctMTA5LjkyIDg5Ljc3eiIvPjwvc3ZnPg==") no-repeat center;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+            mask-position: center;
     -webkit-mask-size: contain;
             mask-size: contain;
+  }
+  .social-icon .icon-orcid {
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMjk0Ljc1IDE4OC4xOWgtNDUuOTJWMzQyaDQ3LjQ3YzY3LjYyIDAgODMuMTItNTEuMzQgODMuMTItNzYuOTEgMC00MS42NC0yNi41NC03Ni45LTg0LjY3LTc2Ljl6TTI1NiA4QzExOSA4IDggMTE5IDggMjU2czExMSAyNDggMjQ4IDI0OCAyNDgtMTExIDI0OC0yNDhTMzkzIDggMjU2IDh6TTE0NS42NiAzNTkuMTNoLTI5Ljc5VjE3OS42aDI5Ljc5djE3OS41M3ptLTE0LjktMjA3Ljk0YTE5LjU3IDE5LjU3IDAgMSAxIDE5LjU3LTE5LjU3IDE5LjY0IDE5LjY0IDAgMCAxLTE5LjU3IDE5LjU3ek0zMjkgMzU5LjEzaC04MS42MlYxNzkuNmg4MC43OWM3Ni45IDAgMTEwLjc1IDU1IDExMC43NSA4OS43Ni0uMDEgMzcuODctMjkuNjEgODkuNzctMTA5LjkyIDg5Ljc3eiIvPjwvc3ZnPg==");
+            mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMjk0Ljc1IDE4OC4xOWgtNDUuOTJWMzQyaDQ3LjQ3YzY3LjYyIDAgODMuMTItNTEuMzQgODMuMTItNzYuOTEgMC00MS42NC0yNi41NC03Ni45LTg0LjY3LTc2Ljl6TTI1NiA4QzExOSA4IDggMTE5IDggMjU2czExMSAyNDggMjQ4IDI0OCAyNDgtMTExIDI0OC0yNDhTMzkzIDggMjU2IDh6TTE0NS42NiAzNTkuMTNoLTI5Ljc5VjE3OS42aDI5Ljc5djE3OS41M3ptLTE0LjktMjA3Ljk0YTE5LjU3IDE5LjU3IDAgMSAxIDE5LjU3LTE5LjU3IDE5LjY0IDE5LjY0IDAgMCAxLTE5LjU3IDE5LjU3ek0zMjkgMzU5LjEzaC04MS42MlYxNzkuNmg4MC43OWM3Ni45IDAgMTEwLjc1IDU1IDExMC43NSA4OS43Ni0uMDEgMzcuODctMjkuNjEgODkuNzctMTA5LjkyIDg5Ljc3eiIvPjwvc3ZnPg==");
+  }
+  .social-icon .icon-scholar {
+    -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNMzkwLjkgMjk4LjVjMCAwIDAgLjEgLjEgLjFjOS4yIDE5LjQgMTQuNCA0MS4xIDE0LjQgNjRDNDA1LjMgNDQ1LjEgMzM4LjUgNTEyIDI1NiA1MTJzLTE0OS4zLTY2LjktMTQ5LjMtMTQ5LjNjMC0yMi45IDUuMi00NC42IDE0LjQtNjRoMGMxLjctMy42IDMuNi03LjIgNS42LTEwLjdjNC40LTcuNiA5LjQtMTQuNyAxNS0yMS4zYzI3LjQtMzIuNiA2OC41LTUzLjMgMTE0LjQtNTMuM2MzMy42IDAgNjQuNiAxMS4xIDg5LjYgMjkuOWM5LjEgNi45IDE3LjQgMTQuNyAyNC44IDIzLjVjNS42IDYuNiAxMC42IDEzLjggMTUgMjEuM2MyIDMuNCAzLjggNyA1LjUgMTAuNXptMjYuNC0xOC44Yy0zMC4xLTU4LjQtOTEtOTguNC0xNjEuMy05OC40cy0xMzEuMiA0MC0xNjEuMyA5OC40TDAgMjAyLjcgMjU2IDAgNTEyIDIwMi43bC05NC43IDc3LjF6Ii8+PC9zdmc+");
+            mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNMzkwLjkgMjk4LjVjMCAwIDAgLjEgLjEgLjFjOS4yIDE5LjQgMTQuNCA0MS4xIDE0LjQgNjRDNDA1LjMgNDQ1LjEgMzM4LjUgNTEyIDI1NiA1MTJzLTE0OS4zLTY2LjktMTQ5LjMtMTQ5LjNjMC0yMi45IDUuMi00NC42IDE0LjQtNjRoMGMxLjctMy42IDMuNi03LjIgNS42LTEwLjdjNC40LTcuNiA5LjQtMTQuNyAxNS0yMS4zYzI3LjQtMzIuNiA2OC41LTUzLjMgMTE0LjQtNTMuM2MzMy42IDAgNjQuNiAxMS4xIDg5LjYgMjkuOWM5LjEgNi45IDE3LjQgMTQuNyAyNC44IDIzLjVjNS42IDYuNiAxMC42IDEzLjggMTUgMjEuM2MyIDMuNCAzLjggNyA1LjUgMTAuNXptMjYuNC0xOC44Yy0zMC4xLTU4LjQtOTEtOTguNC0xNjEuMy05OC40cy0xMzEuMiA0MC0xNjEuMyA5OC40TDAgMjAyLjcgMjU2IDAgNTEyIDIwMi43bC05NC43IDc3LjF6Ii8+PC9zdmc+");
   }
 </style>
