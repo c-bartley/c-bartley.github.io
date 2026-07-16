@@ -1,11 +1,15 @@
 ---
-layout: page
+layout: default
 title: Projects
 description: >-
   Software projects in endangered language technology, Manx Gaelic AI tools,
   speech synthesis, recognition, and voice conversion.
 permalink: /projects/
 ---
+
+<header class="page-header">
+  <h1>Projects</h1>
+</header>
 
 ## Gaelg AI
 

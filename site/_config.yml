@@ -58,6 +58,9 @@ plugins:
 feed:
   posts_limit: 20
 
+# Hide the sidebar "Subscribe" (RSS) link — the feed still exists at /feed.xml
+subscribe: false
+
 # ============================================================
 # Collections & Defaults
 # ============================================================

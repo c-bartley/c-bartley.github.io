@@ -1,11 +1,15 @@
 ---
-layout: page
+layout: default
 title: CV
 description: >-
   Curriculum vitae for Chris Bartley, PhD researcher in endangered language
   speech technology at the University of Sheffield.
 permalink: /cv/
 ---
+
+<header class="page-header">
+  <h1>CV</h1>
+</header>
 
 Manx-speaking PhD researcher at the University of Sheffield working on
 data-efficient speech technology for under-resourced and critically endangered
