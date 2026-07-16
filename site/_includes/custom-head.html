@@ -1,0 +1,17 @@
+<!--
+  Font Awesome 5.0.12 (loaded by the Hamilton theme) predates the fa-orcid
+  brand glyph, so the ORCID social icon renders blank. We give ORCID its own
+  non-FA class (icon-orcid) backed by the official ORCID iD SVG, so Font
+  Awesome's SVG-with-JS engine leaves it alone and the icon always shows.
+-->
+<style>
+  .social-icon .icon-orcid {
+    display: inline-block;
+    font-size: 1rem;        /* neutralise the theme's fa-2x (font-size: 2em) */
+    width: 2rem;            /* ~ matches the sibling fa-2x icons */
+    height: 2rem;
+    vertical-align: -0.35em;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjQTZDRTM5IiBkPSJNMjk0Ljc1IDE4OC4xOWgtNDUuOTJWMzQyaDQ3LjQ3YzY3LjYyIDAgODMuMTItNTEuMzQgODMuMTItNzYuOTEgMC00MS42NC0yNi41NC03Ni45LTg0LjY3LTc2Ljl6TTI1NiA4QzExOSA4IDggMTE5IDggMjU2czExMSAyNDggMjQ4IDI0OCAyNDgtMTExIDI0OC0yNDhTMzkzIDggMjU2IDh6TTE0NS42NiAzNTkuMTNoLTI5Ljc5VjE3OS42aDI5Ljc5djE3OS41M3ptLTE0LjktMjA3Ljk0YTE5LjU3IDE5LjU3IDAgMSAxIDE5LjU3LTE5LjU3IDE5LjY0IDE5LjY0IDAgMCAxLTE5LjU3IDE5LjU3ek0zMjkgMzU5LjEzaC04MS42MlYxNzkuNmg4MC43OWM3Ni45IDAgMTEwLjc1IDU1IDExMC43NSA4OS43Ni0uMDEgMzcuODctMjkuNjEgODkuNzctMTA5LjkyIDg5Ljc3eiIvPjwvc3ZnPg==") no-repeat center;
+    background-size: contain;
+  }
+</style>

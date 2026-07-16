@@ -6,7 +6,7 @@
   icon: fab fa-linkedin
 - title: ORCID
   url: https://orcid.org/0009-0007-2882-6268
-  icon: fab fa-orcid
+  icon: icon-orcid
 - title: Gaelg AI
   url: https://gaelgai.im
   icon: fas fa-language
