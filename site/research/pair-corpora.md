@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Cross-speaker pair corpora
 description: >-
   Audio samples of cross-speaker, content-matched word and phone pairs mined
@@ -7,6 +7,10 @@ description: >-
   conversion (DiffVC / Grad-VC).
 permalink: /research/pair-corpora/
 ---
+
+<header class="page-header">
+  <h1>Cross-speaker pair corpora</h1>
+</header>
 
 <style>
   .samples { margin: 1.4rem 0; }
